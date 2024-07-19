@@ -7,8 +7,21 @@ let apologies = [];
 
 // Generate a random apology
 function generateRandomApology() {
+  const reasons = [
+    'for talking anyhow',
+    'for calling u cultist',
+    'for the inconvenience',
+    'for my mistake',
+    'for the misunderstanding',
+    'for not meeting expectations',
+    'for being rude',
+    'for the trouble',
+    'for the error',
+    'for the trouble caused',
+  ];
+
   return {
-    title: faker.lorem.sentence(),
+    title: `I'm sorry ${reasons[Math.floor(Math.random() * reasons.length)]}`,
     description: faker.lorem.paragraph(),
   };
 }
