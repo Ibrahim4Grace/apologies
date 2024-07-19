@@ -5,24 +5,25 @@ const router = express.Router();
 
 let apologies = [];
 
+// Predefined reasons for apologies
+const reasons = [
+  'for talking anyhow',
+  'for calling you cultist',
+  'for the inconvenience',
+  'for my mistake',
+  'for the misunderstanding',
+  'for not meeting expectations',
+  'for being rude',
+  'for the trouble',
+  'for the error',
+  'for the trouble caused',
+];
 // Generate a random apology
 function generateRandomApology() {
-  const reasons = [
-    'for talking anyhow',
-    'for calling u cultist',
-    'for the inconvenience',
-    'for my mistake',
-    'for the misunderstanding',
-    'for not meeting expectations',
-    'for being rude',
-    'for the trouble',
-    'for the error',
-    'for the trouble caused',
-  ];
-
+  const reason = reasons[Math.floor(Math.random() * reasons.length)];
   return {
-    title: `I'm sorry ${reasons[Math.floor(Math.random() * reasons.length)]}`,
-    description: faker.lorem.paragraph(),
+    title: `I'm sorry ${reason}`,
+    description: `I am deeply sorry ${reason}. It was never my intention, and I regret any trouble this has caused. Please accept my sincerest apologies.`,
   };
 }
 
